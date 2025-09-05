@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Hub - Free Video & AI Tools</title>
+  <meta name="description" content="Discover free platforms to create and share videos, shorts, and AI-generated content. Your all-in-one Creator Hub.">
+  <meta name="keywords" content="free video platforms, AI tools, create videos online, TikTok alternatives, YouTube alternatives, creator hub">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f7;
+      color: #111827;
+      margin: 0;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://picsum.photos/1600/600?blur') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    .category-btn {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero mb-16">
+    <div>
+      <h1 class="text-5xl font-bold mb-4">Creator Hub</h1>
+      <p class="text-xl mb-6">Free platforms to create videos, shorts, and AI content</p>
+      <a href="#directory" class="btn-primary">Explore Tools</a>
+    </div>
+  </header>
+
+  <!-- Featured Categories -->
+  <section class="max-w-6xl mx-auto py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Popular Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="card p-6 text-center">AI Video Tools</div>
+      <div class="card p-6 text-center">Short Video Platforms</div>
+      <div class="card p-6 text-center">Long Video Platforms</div>
+      <div class="card p-6 text-center">AI Art & Content Tools</div>
+    </div>
+  </section>
+
+  <!-- Directory Section -->
+  <section id="directory" class="max-w-6xl mx-auto py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">Free Creator Platforms</h2>
+
+    <!-- Search bar -->
+    <div class="mb-8 text-center">
+      <input type="text" placeholder="Search platforms..." id="searchInput" class="w-full sm:w-1/2 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    </div>
+
+    <!-- Directory cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="directoryCards">
+      <div class="card p-6 directory-card" data-name="tiktok" data-category="shorts">
+        <h3 class="font-semibold text-xl mb-2">TikTok</h3>
+        <p class="text-gray-600 mb-4">Create and share short videos with a global audience.</p>
+        <a href="https://www.tiktok.com" target="_blank" class="text-purple-600 font-semibold">Visit Site →</a>
+      </div>
+      <div class="card p-6 directory-card" data-name="youtube" data-category="long">
+        <h3 class="font-semibold text-xl mb-2">YouTube</h3>
+        <p class="text-gray-600 mb-4">Upload long-form videos and reach millions of viewers worldwide.</p>
+        <a href="https://www.youtube.com" target="_blank" class="text-purple-600 font-semibold">Visit Site →</a>
+      </div>
+      <div class="card p-6 directory-card" data-name="capcut" data-category="ai,shorts">
+        <h3 class="font-semibold text-xl mb-2">CapCut</h3>
+        <p class="text-gray-600 mb-4">Free AI video editor to create shorts and professional content.</p>
+        <a href="https://www.capcut.com" target="_blank" class="text-purple-600 font-semibold">Visit Site →</a>
+      </div>
+      <div class="card p-6 directory-card" data-name="canva" data-category="ai,long">
+        <h3 class="font-semibold text-xl mb-2">Canva</h3>
+        <p class="text-gray-600 mb-4">Free platform for creating AI videos, graphics, and content for all platforms.</p>
+        <a href="https://www.canva.com" target="_blank" class="text-purple-600 font-semibold">Visit Site →</a>
+      </div>
+      <div class="card p-6 directory-card" data-name="runway ml" data-category="ai,video">
+        <h3 class="font-semibold text-xl mb-2">Runway ML</h3>
+        <p class="text-gray-600 mb-4">AI-powered video creation and editing tools for creators.</p>
+        <a href="https://runwayml.com" target="_blank" class="text-purple-600 font-semibold">Visit Site →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-16 py-8 text-center shadow-inner">
+    <p class="text-gray-500">© 2025 Creator Hub. Discover free video and AI tools for creators.</p>
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.directory-card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name');
+        if(name.includes(query)){
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
